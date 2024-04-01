@@ -16,6 +16,11 @@
   }
 }
 
+.form-radio:checked {
+  background-color: green;
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

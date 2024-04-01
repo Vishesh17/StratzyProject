@@ -5,6 +5,11 @@ import { useState } from "react";
 type OptionType = string | null;
 
 const TradeForm = () => {
+  const [price, setPrice] = useState('6451.50'); // Initial price state
+  
+    const handleChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+      setPrice(e.target.value); // Update price state with input value
+    };
   const [shares, setShares] = useState(12);
   const [selectedStopLoss, setSelectedStopLoss] = useState<string | null>(null);
   const [selectedTarget, setSelectedTarget] = useState<string | null>(null);
@@ -35,13 +40,27 @@ const TradeForm = () => {
       {/* Price */}
       <div className="flex items-center justify-between mb-1 w-full">
         <label className="font-semibold text-white">Price</label>
-        <div style = {{background : 'rgba(26, 21, 32, 1)',
-                width: '159px',
-                height: '40px',}}className="relative py-1 px-3 rounded-md w-2/3">
-          <span className="text-white " >₹ 6451.50</span>
-          <div className="absolute bg-green-500 h-1 bottom-0 left-0 right-0" style={{ width: '20%' }} />
+        <div
+          style={{
+            background: 'rgba(26, 21, 32, 1)',
+            width: '159px',
+            height: '40px',
+          }}
+          className="relative py-1 px-3 rounded-md w-2/3"
+        >
+          <input
+            type="text"
+            className="text-white bg-transparent w-full outline-none"
+            value={price}
+            onChange={handleChange}
+          />
+          <div
+          className="absolute bg-green-500 h-1 bottom-0 left-0"
+          style={{ width: `${(parseFloat(price) / 10000) * 100}%` }} // Convert price to number
+        />
         </div>
       </div>
+
 
                 {/* Stop Loss Section */}
             <div className="w-full mb-1">

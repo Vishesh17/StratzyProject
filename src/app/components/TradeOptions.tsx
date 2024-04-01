@@ -14,7 +14,7 @@ const TradeOptions: React.FC = () => {
           {/* Market Radio */}
           <label className="flex items-center">
             <input
-              className="form-radio text-green-500"
+              className="form-radio"
               type="radio"
               name="orderType"
               value="market"
@@ -26,7 +26,7 @@ const TradeOptions: React.FC = () => {
           {/* Limit Radio */}
           <label className="flex items-center">
             <input
-              className="form-radio text-green-500"
+              className="form-radio"
               type="radio"
               name="orderType"
               value="limit"
@@ -45,7 +45,7 @@ const TradeOptions: React.FC = () => {
           {/* Buy Radio */}
           <label className="flex items-center">
             <input
-              className="form-radio text-green-500"
+              className="form-radio"
               type="radio"
               name="actionType"
               value="buy"
@@ -57,7 +57,7 @@ const TradeOptions: React.FC = () => {
           {/* Sell Radio */}
           <label className="flex items-center">
             <input
-              className="form-radio text-green-500"
+              className="form-radio"
               type="radio"
               name="actionType"
               value="sell"
